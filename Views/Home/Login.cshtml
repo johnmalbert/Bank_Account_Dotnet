@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using Bank_Accounts.Models
+@model Login
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="container p-3 bg-info">
+    <h1 class="display-5 text-white">Please Login</h1>
+    <form asp-action="LoginAttempt" asp-controller="Home" method="post">
+        <div class='form-group'>
+            <span asp-validation-for='Email'></span>
+            <label asp-for='Email'>Email address</label>
+            <input class='form-control' asp-for='Email' placeholder='Email'>
+        </div>
+        <div class='form-group'>
+            <span asp-validation-for='Password'></span>
+            <label asp-for='Password'>Password</label>
+            <input class='form-control' asp-for='Password' placeholder='Password'>
+        </div>  
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+<div class="container p-3">
+    <a href="/">Register</a>
+</div>
